@@ -12,6 +12,7 @@ public class ChannelSearchCase extends TestBase {
     //测试频道内搜索
     public void testSearch()
     {
+
         solo.waitForText("外卖");
         solo.clickOnText("外卖");
         solo.sleep(1000);
@@ -21,6 +22,7 @@ public class ChannelSearchCase extends TestBase {
         assertTrue("没有进入频道内搜索页面", solo.waitForView(solo.getView("img_poiList_search")));
         MyFunc.enterTextById("txt_poiList_search_keyword", "饭");//频道内输入“饭”
         solo.sleep(500);
+        //MyFunc.clickById("com.sankuai.meituan:id/actionbar_txt");
 
         MyFunc.clickById("img_poiList_search");//"点击搜索"
         assertTrue("频道内搜索没有找到“饭”", solo.waitForText("饭", 2, 20000));
